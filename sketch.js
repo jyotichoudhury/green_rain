@@ -1,6 +1,6 @@
 var streams = [];
 var fadeInterval = 1.6;
-var symbolSize = 14;
+var symbolSize = 18;
 
 function setup() {
   createCanvas(
@@ -37,7 +37,7 @@ function Symbol(x, y, speed, first, opacity) {
   this.first = first;
   this.opacity = opacity;
 
-  this.switchInterval = round(random(2, 25));
+  this.switchInterval = round(random(5, 25));
 
   this.setToRandomSymbol = function() {
     var charType = round(random(0, 5));
@@ -45,7 +45,7 @@ function Symbol(x, y, speed, first, opacity) {
       if (charType > 1) {
         // set it to Katakana
         this.value = String.fromCharCode(
-          0x30A0 + round(random(0, 96))
+          0x0985 + round(random(0, 20))
         );
       } else {
         // set it to numeric
@@ -63,7 +63,7 @@ function Symbol(x, y, speed, first, opacity) {
 function Stream() {
   this.symbols = [];
   this.totalSymbols = round(random(5, 35));
-  this.speed = random(5, 22);
+  this.speed = random(1, 10);
 
   this.generateSymbols = function(x, y) {
     var opacity = 255;
